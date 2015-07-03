@@ -7,7 +7,7 @@
         <p>Location: {{mineral.location|safe}}</p>
         <p>Chemical composition: {{mineral.chemical_composition|safe}}</p>
         <p>Strength: {{mineral.strength}}</p>
-        {% if mineral.image %}
-        <img src="{{ mineral.image.url }}" width="100" height="100"/>
-        {% endif %}
+        {% for image in mineral.images.all %}
+            <img src="{{ image.image.url }}" width="100" height="100"/>
+        {% endfor %}
 {% endblock content %}
