@@ -20,6 +20,7 @@ class Mineral(models.Model):
     chemical_composition = models.TextField(blank=True, null=True)
     strength = models.CharField(max_length=255, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True, choices=KINDS)
+    thumbnail = models.ImageField(blank=True, null=True, upload_to='collection/media')
 
     class Meta:
         verbose_name = 'mineral'
