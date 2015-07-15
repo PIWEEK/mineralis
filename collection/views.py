@@ -6,6 +6,11 @@ def mineral_list(request):
     context = {
         'minerals': minerals
     }
+
+    if 'd' in request.GET:
+        if request.GET.get('d') == 'mosaic':
+            return render(request, 'collection/mosaic.html', context)
+
     return render(request, 'collection/list.html', context)
 
 def mineral_detail(request, mineral_id):
@@ -13,5 +18,6 @@ def mineral_detail(request, mineral_id):
     context = {
         'mineral': mineral
     }
+
     return render(request, 'collection/detail.html', context)
 
