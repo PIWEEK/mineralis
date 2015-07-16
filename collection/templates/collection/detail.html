@@ -2,12 +2,28 @@
 {% load staticfiles %}
 
 {% block content %}
-        <p>Name: {{mineral.name|safe}}</p>
-        <p>Description: {{mineral.description|safe}}</p>
-        <p>Location: {{mineral.location|safe}}</p>
-        <p>Chemical composition: {{mineral.chemical_composition|safe}}</p>
-        <p>Strength: {{mineral.strength}}</p>
+
+  <div class="over_line"></div>
+  <div class="ficha">
+        <img class="img_detail" src="{{mineral.thumbnail.url}}" alt="picture mineral" />
+        <p class="name_detail">{{mineral.name|safe}}</p>
+        <p class="location_list">{{mineral.location|safe}}</p>
+        <br />
+        <p class="titulo_ficha">Dureza:&nbsp;<span class="contenido_ficha"> {{mineral.strength}}</span></p>
+        <p class="titulo_ficha">Fórmula química:&nbsp;<span class="contenido_ficha"> {{mineral.chemical_composition|safe}}</span></p>
+        <p class="titulo_ficha">Sistema de cristalización:&nbsp;<span class="contenido_ficha"> {{mineral.crystalization_system|safe}}</span></p>
+        <p class="titulo_ficha">Tipología:&nbsp;<span class="contenido_ficha"> {{mineral.get_kind_display|safe}}</span></p>
+
+  </div>
+  <div class="contenido_detail">
+
+        <h5>Descripción:</h5>
+        <p class="contenido_descripcion">{{mineral.description|safe}}</p>
+        <br />
+        <h5>Yacimientos:</h5>
+        <p class="contenido_descripcion">{{mineral.mineral_deposit|safe}}</p>
+  </div>
         {% for image in mineral.images.all %}
-            <img src="{{ image.image.url }}" width="100" height="100"/>
+            <img src="{{ image.image.url }}" width="100%" height="100%"/>
         {% endfor %}
 {% endblock content %}

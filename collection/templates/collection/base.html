@@ -10,9 +10,9 @@
     <body>
       <div class="header">
 
-
+          <a href="/?d=list" alt="logo Mineralis">
             <img id="logo" src="{% static "imgs/logo.png" %}" alt="logo Mineralis: cajita con mineral morado" />
-
+          </a>
 
           <div class="header_btn">
             <a class="a_add" href="/admin/collection/mineral/add/">+</a>
@@ -21,6 +21,12 @@
       </div>
         {% block content %}
         {% endblock content %}
-        
+
+      <div class="footer">
+        <img class="logo_footer" src="{% static "imgs/logo_inkscape.png" %}" alt="logo Inkscape" />
+        <img class="logo_footer" src="{% static "imgs/logo_atom.png" %}" alt="logo Atom editor" />
+        <img class="logo_footer django" src="{% static "imgs/logo_django.png" %}" alt="logo Django" />
+      </div>
+
     </body>
 </html>

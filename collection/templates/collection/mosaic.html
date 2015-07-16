@@ -5,38 +5,30 @@
 <div class="filter">
 
   <div class="filter_links">
-    <a class="filter_links_a active" href="#">Lista AZ</a>
+    <a class="filter_links_a active" href="/?d=list">Lista AZ</a>
     <span> | </span>
-    <a class="filter_links_a" href="#">Categorías</a>
+    <a class="filter_links_a" href="/?d=kind">Categorías</a>
   </div>
 
   <div class="filter_btn">
-    <a id="listado" href=""></a>
+    <a id="listado_m" href="/?d=list"></a>
     <span id="invisible"> | </span>
-    <a id="mosaico" href=""></a>
+    <a id="mosaico_m" href="/?d=mosaic"></a>
   </div>
 
 </div>
 
-<div class="lista_minerales">
+<div class="mosaic_contenedor">
 
-  <ul>
     {% for mineral in minerals %}
-    <li>
-        <div class="align">
-          <img src="imgs/minerales/thumbnails/Adularia_1.jpg">
-        </div>
-        <div class="align text">
-          <h3>{{mineral.name|safe}}</h3>
-          <p>{{mineral.location|safe}}</p>
-        </div>
-        <div>
-          <img class="arrow" src="{% static "imgs/arrow.png" %}" alt="arrow" />
-        </div>
-    </li>
+    <a href="{% url 'detail' mineral.id %}" alt="mineral item">
+      <div class="item_mosaic">
+        <img src="{{mineral.thumbnail.url}}">
+        <div class="mineral_mosaic_name"><h4>{{mineral.name|safe}}</h4></div>
+      </div>
+    </a>
     {% endfor %}
-    </ul>
 
-  </div>
+</div>
 
 {% endblock content %}

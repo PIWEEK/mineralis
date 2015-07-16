@@ -15,9 +15,7 @@ KINDS = (
 
 class Mineral(models.Model):
     name = models.CharField(max_length=255)
-    crystalization_system = models.TextField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    mineral_deposit = models.TextField(blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
     chemical_composition = models.CharField(blank=True, null=True, max_length=255)
     strength = models.CharField(max_length=255, blank=True, null=True)
