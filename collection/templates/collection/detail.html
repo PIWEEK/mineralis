@@ -5,9 +5,35 @@
 
  <div class="over_line"></div>
 
- {% if mineral_prev %}
- <a href="{% url 'detail' mineral_prev %}" target="_self">Anterior</a>
- {% endif %}
+ <div class="pagination_area">
+    <div class="contenedor_max">
+
+        <div class="anterior">
+
+           {% if mineral_prev %}
+           {% if kind %}
+           <a class="pagination" href="{% url 'detail' mineral_prev %}?k={{kind}}" target="_self">
+           {% else %}
+           <a class="pagination" href="{% url 'detail' mineral_prev %}" target="_self">
+           {% endif %}
+             <img class="pagination_arrow_l" src="{% static "imgs/arrow_left.png" %}" alt="left arrow" />&nbsp; Anterior</a>
+           {% endif %}
+        </div>
+        <div class="siguiente">
+           {% if mineral_next %}
+           {% if kind %}
+           <a class="pagination" href="{% url 'detail' mineral_next %}?k={{kind}}" target="_self">
+            {% else %}
+            <a class="pagination" href="{% url 'detail' mineral_next %}" target="_self">
+            {% endif %}
+             Siguiente &nbsp;<img class="pagination_arrow_r" src="{% static "imgs/arrow_right.png" %}" alt="right arrow" /></a>
+           {% endif %}
+
+        </div>
+
+    </div>
+ </div>
+
  <div class="ficha">
    <div class="contenedor_max">
       <img class="img_detail" src="{{mineral.thumbnail.url}}" alt="picture mineral" />
@@ -34,7 +60,5 @@
             <img src="{{ image.image.url }}" width="100%" height="100%"/>
         {% endfor %}
 
- {% if mineral_next %}
- <a href="{% url 'detail' mineral_next %}" target="_self">Siguiente</a>
- {% endif %}
+
 {% endblock content %}

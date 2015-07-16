@@ -1,19 +1,34 @@
 
-body {
-  font-family: Open Sans;
-  padding: 0;
-  margin: 0;
-}
-
 * {
   padding: 0px;
   margin: 0px;
+}
+
+body {
+  font-family: Open Sans;
+
+}
+
+/*.page-wrap {
+  min-height: 100%;
+  margin-bottom: -70px;
+  overflow: hidden;
+}
+*/
+
+.contenedor_max {
+  max-width: 600px;
+  min-height: 100%;
+  margin: auto;
+  height: auto;
 }
 
 /* ----------------------- Header --------------------- */
 
 .header {
   text-align: center;
+  background-color: #79b3bb;
+  background-color: #ff8282;
   background-color: #f5f5f5;
   background-color: #f2f3f8;
   height: 50px;
@@ -51,6 +66,31 @@ a.a_add:hover {
 	text-decoration: none;
   background-color: #6d6d6d;
 }
+
+/* ---------------footer--------------- */
+
+.site-footer {
+  min-height: 70px;
+  height: 100%;
+  width: 100%;
+  background-color: #444444;
+  bottom: 0px;
+  overflow:hidden;
+  margin-top: 20px;
+
+}
+
+.logo_footer {
+  opacity: 0.6;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.logo_footer.django {
+    margin-top: 28px;
+}
+
 
 /* ----------------------- Filters ----------------- */
 /* ----------------------- Links ------------------- */
@@ -187,7 +227,6 @@ ul {
 }
 
 .align {
-  /*background-color: orange;*/
   float: left;
 }
 
@@ -256,39 +295,75 @@ h4 {
   margin-top: 2px;
 }
 
-/* ---------------footer--------------- */
+/* ----------------------------Categorias mineral-------------------- */
 
-.footer {
-  min-height: 70px;
-  width: 100%;
-  background-color: #444444;
-  bottom: 0px;
-  margin-top: 20px;
+.categories_contenedor {
+  /*display: none;*/
+}
+
+li.category {
+  /*margin-top: 5px;*/
+  border-bottom: 1px solid #e6e6e6;
   overflow:hidden;
 }
 
-.logo_footer {
-  opacity: 0.6;
-  float: right;
-  margin-right: 20px;
-  margin-top: 20px;
-}
-kdkdkdkddkdk
-.logo_footer.django {
-    margin-top: 28px;
+ul a li.category:hover {
+  background-color: #f5f5f5;
 }
 
-/* ------------------Detalle mineral-------------- */
-/* ------------------ficha-------------- */
-
-.contenedor_max {
-  max-width: 600px;
-  margin: auto;
-}
+/* ----------------------------Detalle mineral-------------------- */
 
 .over_line {
   border: 1px solid #b8b8b8;
 }
+
+/* ----------------Pagination------------- */
+
+.pagination_area {
+  background-color: #444444;
+  height: 25px;
+  /*position:relative;*/
+}
+
+.anterior {
+  float: left;
+  margin-left: 10px;
+}
+
+.siguiente {
+  float: right;
+  right: 0;
+  top: 0;
+}
+
+.pagination {
+  font-size: 12px;
+  color: #888888;
+  text-decoration: none;
+}
+
+.pagination:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.pagination_arrow_l {
+ margin-top: 6px;
+ width: 5px;
+ float: left;
+}
+
+.pagination_arrow_r {
+  margin-right: 10px;
+  margin-top: 6px;
+  float: right;
+  width: 5px;
+}
+
+
+
+/* ------------------ficha-------------- */
 
 .ficha {
   background-color: #f2f3f8;
@@ -314,6 +389,11 @@ kdkdkdkddkdk
 
 .contenido_ficha {
   font-weight: normal;
+}
+
+.page {
+  background-color: #444444;
+
 }
 
 /* ------------------description------------- */

@@ -1,6 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-  <html>
+<html>
+
     <head>
       <title>List | Mineralis</title>
       <META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8"/>
@@ -8,25 +9,28 @@
     </head>
 
     <body>
-      <div class="header">
 
-          <a href="/?d=list" alt="logo Mineralis">
-            <img id="logo" src="{% static "imgs/logo.png" %}" alt="logo Mineralis: cajita con mineral morado" />
-          </a>
+        <div class="header">
+              <a href="/?d=list" alt="logo Mineralis">
+                <img id="logo" src="{% static "imgs/logo.png" %}" alt="logo Mineralis: cajita con mineral morado" />
+              </a>
 
-          <div class="header_btn">
-            <a class="a_add" href="/admin/collection/mineral/add/">+</a>
-          </div>
+              <div class="header_btn">
+                <a class="a_add" href="/admin/collection/mineral/add/">+</a>
+              </div>
+        </div>
 
-      </div>
-        {% block content %}
-        {% endblock content %}
+        <div class="page-wrap">
+              {% block content %}
+              {% endblock content %}
+        </div>
 
-      <div class="footer">
-        <img class="logo_footer" src="{% static "imgs/logo_inkscape.png" %}" alt="logo Inkscape" />
-        <img class="logo_footer" src="{% static "imgs/logo_atom.png" %}" alt="logo Atom editor" />
-        <img class="logo_footer django" src="{% static "imgs/logo_django.png" %}" alt="logo Django" />
-      </div>
+        <footer class="site-footer">
+              <img class="logo_footer" src="{% static "imgs/logo_inkscape.png" %}" alt="logo Inkscape" />
+              <img class="logo_footer" src="{% static "imgs/logo_atom.png" %}" alt="logo Atom editor" />
+              <img class="logo_footer django" src="{% static "imgs/logo_django.png" %}" alt="logo Django" />
+        </footer>
 
     </body>
+
 </html>

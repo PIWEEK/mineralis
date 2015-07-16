@@ -1,37 +1,66 @@
 {% extends 'collection/base.html' %}
 {% load staticfiles %}
-
 {% block content %}
-<div class="contenedor_max">
-    <div class="filter">
-
-      <div class="filter_links">
-        <a class="filter_links_a active" href="/?d=list">Lista AZ</a>
-        <span> | </span>
-        <a class="filter_links_a" href="/?d=kind">Categorías</a>
-      </div>
-
-      <div class="filter_btn">
-        <a id="listado_m" href="/?d=list"></a>
-        <span id="invisible"> | </span>
-        <a id="mosaico_m" href="/?d=mosaic"></a>
-      </div>
-
-    </div>
-</div>
 
 <div class="contenedor_max">
-    <div class="mosaic_contenedor">
+        <div class="filter">
 
-        {% for mineral in minerals %}
-        <a href="{% url 'detail' mineral.id %}" alt="mineral item">
-          <div class="item_mosaic">
-            <img src="{{mineral.thumbnail.url}}">
-            <div class="mineral_mosaic_name"><h4>{{mineral.name|safe}}</h4></div>
+          <div class="filter_links">
+            <a class="filter_links_a active" href="/?d=list">Lista AZ</a>
+            <span> | </span>
+            <a class="filter_links_a" href="/?d=kind">Categorías</a>
           </div>
-        </a>
-        {% endfor %}
 
-    </div>
+          <div class="filter_btn">
+            <a id="listado_m" href="/?d=list"></a>
+            <span id="invisible"> | </span>
+            <a id="mosaico_m" href="/?d=mosaic"></a>
+          </div>
+
+        </div>
 </div>
+{% if kind %}
+{{ kind }}
+{% endif %}
+
+<div class="contenedor_max">
+        <div class="mosaic_contenedor">
+
+            {% for mineral in minerals %}
+            {% if kind %}
+            <a href="{% url 'detail' mineral.id %}?k={{kind}}" alt="mineral item">
+            {% else %}
+              <a href="{% url 'detail' mineral.id %}" alt="mineral item">
+            {% endif %}
+              <div class="item_mosaic">
+                <img src="{{mineral.thumbnail.url}}">
+                <div class="mineral_mosaic_name"><h4>{{mineral.name|safe}}</h4></div>
+              </div>
+            </a>
+            {% endfor %}
+
+        </div>
+</div>
+
+<div class="contenedor_max">
+        <div class="categories_contenedor">
+
+            <ul>
+              <a href="#">
+                  <li>
+                    <div class="align">
+                      <h3>1. Elementos nativos</h3>
+                    </div>
+                    <div>
+                      <img class="arrow" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+
+            </ul>
+
+        </div>
+</div>
+
 {% endblock content %}

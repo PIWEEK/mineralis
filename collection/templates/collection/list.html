@@ -18,12 +18,19 @@
   </div>
 </div>
 
+{% if kind %}
+<div class="laclase"><span>{{ kind_desc }}</span></div>
+{% endif %}
 <div class="contenedor_max">
     <div class="lista_minerales">
 
       <ul>
         {% for mineral in minerals %}
-        <a href="{% url 'detail' mineral.id %}" alt="mineral item">
+        {% if kind %}
+        <a href="{% url 'detail' mineral.id %}?k={{kind}}" alt="mineral item">
+        {% else %}
+          <a href="{% url 'detail' mineral.id %}" alt="mineral item">
+        {% endif %}
           <li>
             <div class="align">
               <img src="{{mineral.thumbnail.url}}">
