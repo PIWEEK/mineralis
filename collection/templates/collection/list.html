@@ -2,43 +2,44 @@
 {% load staticfiles %}
 
 {% block content %}
-<div class="filter">
+<div class="contenedor_max">
+  <div class="filter">
+      <div class="filter_links">
+        <a class="filter_links_a active" href="/?d=list">Lista AZ</a>
+        <span> | </span>
+        <a class="filter_links_a" href="/?d=kind">Categorías</a>
+      </div>
 
-  <div class="filter_links">
-    <a class="filter_links_a active" href="/?d=list">Lista AZ</a>
-    <span> | </span>
-    <a class="filter_links_a" href="/?d=kind">Categorías</a>
+      <div class="filter_btn">
+        <a id="listado" href="/?d=list"></a>
+        <span id="invisible"> | </span>
+        <a id="mosaico" href="/?d=mosaic"></a>
+      </div>
   </div>
-
-  <div class="filter_btn">
-    <a id="listado" href="/?d=list"></a>
-    <span id="invisible"> | </span>
-    <a id="mosaico" href="/?d=mosaic"></a>
-  </div>
-
 </div>
 
-<div class="lista_minerales">
+<div class="contenedor_max">
+    <div class="lista_minerales">
 
-  <ul>
-    {% for mineral in minerals %}
-    <a href="{% url 'detail' mineral.id %}" alt="mineral item">
-      <li>
-        <div class="align">
-          <img src="{{mineral.thumbnail.url}}">
-        </div>
-        <div class="align text">
-          <h3>{{mineral.name|safe}}</h3>
-          <p class="location_list">{{mineral.location|safe}}</p>
-        </div>
-        <div>
-          <img class="arrow" src="{% static "imgs/arrow.png" %}" alt="arrow" />
-        </div>
-      </li>
-    </a>
-    {% endfor %}
-    </ul>
-
-  </div>
+      <ul>
+        {% for mineral in minerals %}
+        <a href="{% url 'detail' mineral.id %}" alt="mineral item">
+          <li>
+            <div class="align">
+              <img src="{{mineral.thumbnail.url}}">
+            </div>
+            <div class="align text">
+              <h3>{{mineral.name|safe}}</h3>
+              <p class="location_list">{{mineral.location|safe}}</p>
+            </div>
+            <div>
+              <img class="arrow" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+            </div>
+          </li>
+        </a>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
 
 {% endblock content %}
