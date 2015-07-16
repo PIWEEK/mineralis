@@ -5,6 +5,9 @@
 
  <div class="over_line"></div>
 
+ {% if mineral_prev %}
+ <a href="{% url 'detail' mineral_prev %}" target="_self">Anterior</a>
+ {% endif %}
  <div class="ficha">
    <div class="contenedor_max">
       <img class="img_detail" src="{{mineral.thumbnail.url}}" alt="picture mineral" />
@@ -31,4 +34,7 @@
             <img src="{{ image.image.url }}" width="100%" height="100%"/>
         {% endfor %}
 
+ {% if mineral_next %}
+ <a href="{% url 'detail' mineral_next %}" target="_self">Siguiente</a>
+ {% endif %}
 {% endblock content %}

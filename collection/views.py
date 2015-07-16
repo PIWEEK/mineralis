@@ -17,9 +17,17 @@ def mineral_list(request):
     return render(request, 'collection/list.html', context)
 
 def mineral_detail(request, mineral_id):
-    mineral = Mineral.objects.get(pk=mineral_id)
+    minerals = Mineral.objects.all().order_by('name')
+    mineral = minerals.get(pk=mineral_id)
+    minerals_ids = list(minerals.values_list('id', flat = True))
+    mineral_ind = minerals_ids.index(int(mineral_id))
+    mineral_prev = mineral_ind > 0 and minerals_ids[mineral_ind - 1] or None
+    mineral_next = mineral_ind < len(minerals) and minerals_ids[mineral_ind + 1] or None
+
     context = {
-        'mineral': mineral
+        'mineral': mineral,
+        'mineral_prev': mineral_prev,
+        'mineral_next': mineral_next
     }
 
     return render(request, 'collection/detail.html', context)
