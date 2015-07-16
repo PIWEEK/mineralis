@@ -31,6 +31,14 @@
               <img class="logo_footer django" src="{% static "imgs/logo_django.png" %}" alt="logo Django" />
         </footer>
 
+        <script type="text/javascript">
+            var elm = document.querySelector('.open-categories');
+            elm.addEventListener('click', function (event) {
+              event.preventDefault();
+              document.querySelector('.show-categories-section').style.display = 'block';
+              document.querySelector('.hide-categories-section').style.display = 'none';
+            });
+        </script>
     </body>
 
 </html>
