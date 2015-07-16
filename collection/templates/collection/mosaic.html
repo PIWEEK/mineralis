@@ -8,7 +8,7 @@
           <div class="filter_links">
             <a class="filter_links_a active" href="/?d=list">Lista AZ</a>
             <span> | </span>
-            <a class="filter_links_a" href="/?d=kind">Categorías</a>
+            <a class="filter_links_a open-categories" href="#">Categorías</a>
           </div>
 
           <div class="filter_btn">
@@ -19,12 +19,14 @@
 
         </div>
 </div>
+
+<!-- Lo de abajo es el título de la categoría, que solo aparece si se ha filtrado por una categoría-->
 {% if kind %}
-{{ kind }}
+<div class="category_title"><span>{{ kind_desc }}</span></div>
 {% endif %}
 
 <div class="contenedor_max">
-        <div class="mosaic_contenedor">
+        <div class="mosaic_contenedor hide-categories-section">
 
             {% for mineral in minerals %}
             {% if kind %}
@@ -42,17 +44,118 @@
         </div>
 </div>
 
+
+
 <div class="contenedor_max">
-        <div class="categories_contenedor">
+        <div class="categories_contenedor  show-categories-section">
 
             <ul>
-              <a href="#">
+              <a href="{% url 'list' %}?k=ELEMENTS">
                   <li>
                     <div class="align">
-                      <h3>1. Elementos nativos</h3>
+                      <h3 class="list_categories">1. Elementos nativos</h3>
                     </div>
                     <div>
-                      <img class="arrow" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=SULFIDES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">2. Sulfuros y Sulfosales</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=HALIDES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">3. Haluros</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=OXIDES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">4. Óxidos e hidróxidos</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=CARBONATES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">5. Carbonatos y nitratos</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=BORATES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">6. Boratos</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=SULFATES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">7. Sulfatos, cromatos, molibdatos y wolframatos</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=PHOSPHATES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">8. Fosfatos, arseniatos y vanadatos</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=SILICATES">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">9. Silicatos</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
+                    </div>
+                  </li>
+              </a>
+
+              <a href="{% url 'list' %}?k=ORGANIC">
+                  <li>
+                    <div class="align">
+                      <h3 class="list_categories">10. Sustancias orgánicas</h3>
+                    </div>
+                    <div>
+                      <img class="arrow_category" src="{% static "imgs/arrow.png" %}" alt="arrow" />
                     </div>
                   </li>
               </a>

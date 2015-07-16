@@ -1,16 +1,16 @@
 from django.db import models
 
 KINDS = (
-    ('ELEMENTS', 'Elementos nativos'),
-    ('SULFIDES', 'Sulfuros y sulfosales'),
-    ('HALIDES', 'Halogenuros'),
-    ('OXIDES', 'Óxidos e hidroxidos'),
-    ('CARBONATES', 'Carbonatos y nitratos'),
-    ('BORATES', 'Boratos'),
-    ('SULFATES', 'Sulfatos, cromatos, molibdatos y wolframatos'),
-    ('PHOSPHATES', 'Fosfatos, arseniatos y vanadatos'),
-    ('SILICATES', 'Silicatos'),
-    ('ORGANIC', 'Sustancias orgánicas')
+    ('ELEMENTS', '1. Elementos nativos'),
+    ('SULFIDES', '2. Sulfuros y sulfosales'),
+    ('HALIDES', '3. Halogenuros'),
+    ('OXIDES', '4. Óxidos e hidroxidos'),
+    ('CARBONATES', '5. Carbonatos y nitratos'),
+    ('BORATES', '6. Boratos'),
+    ('SULFATES', '7. Sulfatos, cromatos, molibdatos y wolframatos'),
+    ('PHOSPHATES', '8. Fosfatos, arseniatos y vanadatos'),
+    ('SILICATES', '9. Silicatos'),
+    ('ORGANIC', '10. Sustancias orgánicas')
 )
 
 class Mineral(models.Model):

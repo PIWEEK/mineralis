@@ -265,7 +265,7 @@ ul a li:hover {
 /* ---------------------- Mosaico Minerales --------------- */
 
 .mosaic_contenedor {
-
+ /*display: none;*/
 }
 
 .item_mosaic {
@@ -298,7 +298,21 @@ h4 {
 /* ----------------------------Categorias mineral-------------------- */
 
 .categories_contenedor {
-  /*display: none;*/
+display: none;
+}
+
+.list_categories {
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.arrow_category {
+  float: right;
+  margin-top: 8px;
+  margin-right: 5px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  top: 0;
 }
 
 li.category {
@@ -309,6 +323,18 @@ li.category {
 
 ul a li.category:hover {
   background-color: #f5f5f5;
+}
+
+.category_title {
+  background-color: #f3aff3;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+div.category_title span {
+  color: #ffffff;
+  margin-left: 5px;
 }
 
 /* ----------------------------Detalle mineral-------------------- */
