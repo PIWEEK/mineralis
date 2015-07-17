@@ -18,13 +18,15 @@
   </div>
 </div>
 
-<!-- Lo de abajo es el título de la categoría-->
-{% if kind %}
-<div class="category_title"><span>{{ kind_desc }}</span></div>
-{% endif %}
 
 
 <div class="contenedor_max">
+
+  <!-- Lo de abajo es el título de la categoría-->
+  {% if kind %}
+  <div class="category_title"><span>{{ kind_desc }}</span></div>
+  {% endif %}
+
     <div class="lista_minerales hide-categories-section">
 
       <ul>

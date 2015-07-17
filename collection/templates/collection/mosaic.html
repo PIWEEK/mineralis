@@ -20,12 +20,15 @@
         </div>
 </div>
 
-<!-- Lo de abajo es el título de la categoría, que solo aparece si se ha filtrado por una categoría-->
-{% if kind %}
-<div class="category_title"><span>{{ kind_desc }}</span></div>
-{% endif %}
+
 
 <div class="contenedor_max">
+
+  <!-- Lo de abajo es el título de la categoría, que solo aparece si se ha filtrado por una categoría-->
+  {% if kind %}
+  <div class="category_title"><span>{{ kind_desc }}</span></div>
+  {% endif %}
+  
         <div class="mosaic_contenedor hide-categories-section">
 
             {% for mineral in minerals %}
