@@ -8,12 +8,25 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-/*.page-wrap {
-  min-height: 100%;
-  margin-bottom: -70px;
-  overflow: hidden;
+/* Fixes the footer position to the bottom */
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-*/
+.page-wrap {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
 
 .contenedor_max {
   max-width: 600px;
@@ -70,13 +83,11 @@ a.a_add:hover {
 
 .site-footer {
   min-height: 70px;
-  height: 100%;
   width: 100%;
   background-color: #444444;
   bottom: 0px;
   overflow:hidden;
   margin-top: 20px;
-
 }
 
 .logo_footer {
